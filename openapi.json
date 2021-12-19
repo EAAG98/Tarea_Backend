@@ -1,15 +1,3 @@
-
-> flotavehicular@0.0.1 preopenapi-spec
-> npm run build
-
-
-> flotavehicular@0.0.1 build
-> lb-tsc
-
-
-> flotavehicular@0.0.1 openapi-spec
-> node ./dist/openapi-spec
-
 {
   "openapi": "3.0.0",
   "info": {

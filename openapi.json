@@ -1470,15 +1470,19 @@
         "title": "Rutas",
         "type": "object",
         "properties": {
-          "id": {
+          "ID": {
             "type": "string"
           },
-          "distancia": {
-            "type": "number"
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
           }
         },
         "required": [
-          "distancia"
+          "lugar_inicio",
+          "lugar_final"
         ],
         "additionalProperties": true
       },
@@ -1487,12 +1491,19 @@
         "type": "object",
         "description": "(tsType: Omit<Rutas, 'id'>, schemaOptions: { title: 'NewRutas', exclude: [ 'id' ] })",
         "properties": {
-          "distancia": {
-            "type": "number"
+          "ID": {
+            "type": "string"
+          },
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
           }
         },
         "required": [
-          "distancia"
+          "lugar_inicio",
+          "lugar_final"
         ],
         "additionalProperties": true,
         "x-typescript-type": "Omit<Rutas, 'id'>"
@@ -1502,15 +1513,19 @@
         "type": "object",
         "description": "(tsType: RutasWithRelations, schemaOptions: { includeRelations: true })",
         "properties": {
-          "id": {
+          "ID": {
             "type": "string"
           },
-          "distancia": {
-            "type": "number"
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
           }
         },
         "required": [
-          "distancia"
+          "lugar_inicio",
+          "lugar_final"
         ],
         "additionalProperties": true,
         "x-typescript-type": "RutasWithRelations"
@@ -1520,11 +1535,14 @@
         "type": "object",
         "description": "(tsType: Partial<Rutas>, schemaOptions: { partial: true })",
         "properties": {
-          "id": {
+          "ID": {
             "type": "string"
           },
-          "distancia": {
-            "type": "number"
+          "lugar_inicio": {
+            "type": "string"
+          },
+          "lugar_final": {
+            "type": "string"
           }
         },
         "additionalProperties": true,
@@ -1995,10 +2013,13 @@
               {
                 "type": "object",
                 "properties": {
-                  "id": {
+                  "ID": {
                     "type": "boolean"
                   },
-                  "distancia": {
+                  "lugar_inicio": {
+                    "type": "boolean"
+                  },
+                  "lugar_final": {
                     "type": "boolean"
                   }
                 },
@@ -2008,7 +2029,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "example": "id"
+                  "example": "ID"
                 },
                 "uniqueItems": true
               }
@@ -2059,10 +2080,13 @@
               {
                 "type": "object",
                 "properties": {
-                  "id": {
+                  "ID": {
                     "type": "boolean"
                   },
-                  "distancia": {
+                  "lugar_inicio": {
+                    "type": "boolean"
+                  },
+                  "lugar_final": {
                     "type": "boolean"
                   }
                 },
@@ -2072,7 +2096,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "example": "id"
+                  "example": "ID"
                 },
                 "uniqueItems": true
               }

@@ -10,6 +10,309 @@
     }
   },
   "paths": {
+    "/licencias/count": {
+      "get": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "count",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Licencias.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Licencias>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasController.count"
+      }
+    },
+    "/licencias/{id}": {
+      "put": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Licencias"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LicenciasController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenciasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LicenciasController.updateById"
+      },
+      "get": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "findById",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicenciasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasController.findById"
+      },
+      "delete": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Licencias DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "LicenciasController.deleteById"
+      }
+    },
+    "/licencias": {
+      "post": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "create",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLicencias"
+              }
+            }
+          }
+        },
+        "operationId": "LicenciasController.create"
+      },
+      "patch": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Licencias PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Licencias.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Licencias>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenciasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "LicenciasController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "LicenciasController",
+        "x-operation-name": "find",
+        "tags": [
+          "LicenciasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Licencias model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicenciasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Licencias.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LicenciasController.find"
+      }
+    },
     "/ping": {
       "get": {
         "x-controller-name": "PingController",
@@ -667,6 +970,309 @@
           }
         },
         "operationId": "UserController.signUp"
+      }
+    },
+    "/tipovehiculos/count": {
+      "get": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "count",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Tipovehiculo model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Tipovehiculo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Tipovehiculo>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoController.count"
+      }
+    },
+    "/tipovehiculos/{id}": {
+      "put": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Tipovehiculo PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tipovehiculo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipovehiculoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Tipovehiculo PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipovehiculoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipovehiculoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Tipovehiculo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipovehiculoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tipovehiculo.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Tipovehiculo DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TipovehiculoController.deleteById"
+      }
+    },
+    "/tipovehiculos": {
+      "post": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "create",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Tipovehiculo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tipovehiculo"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipovehiculo"
+              }
+            }
+          }
+        },
+        "operationId": "TipovehiculoController.create"
+      },
+      "patch": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Tipovehiculo PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Tipovehiculo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Tipovehiculo>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipovehiculoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "TipovehiculoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "TipovehiculoController",
+        "x-operation-name": "find",
+        "tags": [
+          "TipovehiculoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Tipovehiculo model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipovehiculoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tipovehiculo.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipovehiculoController.find"
       }
     },
     "/transportistas/count": {
@@ -1357,6 +1963,88 @@
   ],
   "components": {
     "schemas": {
+      "Licencias": {
+        "title": "Licencias",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "liviana": {
+            "type": "string"
+          },
+          "pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "liviana",
+          "pesada"
+        ],
+        "additionalProperties": true
+      },
+      "NewLicencias": {
+        "title": "NewLicencias",
+        "type": "object",
+        "description": "(tsType: Licencias, schemaOptions: { title: 'NewLicencias' })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "liviana": {
+            "type": "string"
+          },
+          "pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "liviana",
+          "pesada"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Licencias"
+      },
+      "LicenciasWithRelations": {
+        "title": "LicenciasWithRelations",
+        "type": "object",
+        "description": "(tsType: LicenciasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "liviana": {
+            "type": "string"
+          },
+          "pesada": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "liviana",
+          "pesada"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "LicenciasWithRelations"
+      },
+      "LicenciasPartial": {
+        "title": "LicenciasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Licencias>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "liviana": {
+            "type": "string"
+          },
+          "pesada": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Licencias>"
+      },
       "Posiciones": {
         "title": "Posiciones",
         "type": "object",
@@ -1535,6 +2223,88 @@
         },
         "additionalProperties": true,
         "x-typescript-type": "Partial<Rutas>"
+      },
+      "Tipovehiculo": {
+        "title": "Tipovehiculo",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true
+      },
+      "NewTipovehiculo": {
+        "title": "NewTipovehiculo",
+        "type": "object",
+        "description": "(tsType: Tipovehiculo, schemaOptions: { title: 'NewTipovehiculo' })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "Tipovehiculo"
+      },
+      "TipovehiculoWithRelations": {
+        "title": "TipovehiculoWithRelations",
+        "type": "object",
+        "description": "(tsType: TipovehiculoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pickup",
+          "camion"
+        ],
+        "additionalProperties": true,
+        "x-typescript-type": "TipovehiculoWithRelations"
+      },
+      "TipovehiculoPartial": {
+        "title": "TipovehiculoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Tipovehiculo>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "pickup": {
+            "type": "string"
+          },
+          "camion": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "x-typescript-type": "Partial<Tipovehiculo>"
       },
       "Transportistas": {
         "title": "Transportistas",
@@ -1797,6 +2567,145 @@
         "additionalProperties": true,
         "x-typescript-type": "Partial<Vehiculos>"
       },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Licencias.Filter": {
+        "type": "object",
+        "title": "Licencias.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "liviana": {
+                    "type": "boolean"
+                  },
+                  "pesada": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Licencias.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Licencias>"
+      },
+      "Licencias.Filter1": {
+        "type": "object",
+        "title": "Licencias.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Licencias.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "liviana": {
+                    "type": "boolean"
+                  },
+                  "pesada": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Licencias.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Licencias>"
+      },
       "PingResponse": {
         "type": "object",
         "title": "PingResponse",
@@ -1818,16 +2727,6 @@
               }
             },
             "additionalProperties": true
-          }
-        }
-      },
-      "loopback.Count": {
-        "type": "object",
-        "title": "loopback.Count",
-        "x-typescript-type": "@loopback/repository#Count",
-        "properties": {
-          "count": {
-            "type": "number"
           }
         }
       },
@@ -2094,6 +2993,135 @@
         },
         "additionalProperties": false,
         "x-typescript-type": "@loopback/repository#Filter<Rutas>"
+      },
+      "Tipovehiculo.Filter": {
+        "type": "object",
+        "title": "Tipovehiculo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "pickup": {
+                    "type": "boolean"
+                  },
+                  "camion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Tipovehiculo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Tipovehiculo>"
+      },
+      "Tipovehiculo.Filter1": {
+        "type": "object",
+        "title": "Tipovehiculo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Tipovehiculo.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "pickup": {
+                    "type": "boolean"
+                  },
+                  "camion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Tipovehiculo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Tipovehiculo>"
       },
       "Transportistas.Filter": {
         "type": "object",

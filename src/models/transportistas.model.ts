@@ -7,19 +7,25 @@ export class Transportistas extends Entity {
     id: true,
     generated: true,
   })
-  Id?: string;
+  id?: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  Identidad: string;
+  identidad: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  Nombre: string;
+  nombre: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  licencias: string;
 
   // Define well-known properties here
 
